@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 
-from src.data.utils import get_scraping_constants, get_folders_constants
+from src.utils.constants import get_scraping_constants, get_folders_constants
 
 scraping_constants = get_scraping_constants()
 external_csv_base_folder = get_folders_constants()[
@@ -39,7 +39,8 @@ def scrape_stats_and_generate_csvs(
             else:
                 dataframe = pd.read_html(
                     data, attrs={'id': dataset_table_id},  header=1)[0]
-            print(f"💾💾 Saving csv file for {current_year}'s {folder_name} data. 💾💾")
+            print(
+                f"💾💾 Saving csv file for {current_year}'s {folder_name} data. 💾💾")
             dataframe.to_csv(
                 f"{csv_base_filepath}/{folder_name}/{folder_name}_{current_year}.csv")
             print(f"💪💪 Success! 💪💪")

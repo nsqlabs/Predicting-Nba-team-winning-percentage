@@ -1,7 +1,8 @@
 import os
 import pandas as pd
 
-from src.data.utils import generate_full_csv_filename, get_folders_constants
+from src.utils.files import generate_full_csv_filename, get_folders_constants
+from src.utils.folders import get_folders_constants
 
 
 def create_totals_raw_datasets() -> None:
