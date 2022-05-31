@@ -61,3 +61,11 @@ Project Organization
 
 - [X] Scrape data from basketball-reference.com
 - [X] Create raw datasets.
+- [X] Fix advanced stats dataset headers.
+- [X] Remove league averages from datasets.
+- [X] Create dataset that summarizes win, losses and the needed dataset.
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
+- [ ] .
