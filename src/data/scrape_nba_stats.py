@@ -42,5 +42,7 @@ def scrape_stats_and_generate_csvs(
             print(
                 f"💾💾 Saving csv file for {current_year}'s {folder_name} data. 💾💾")
             dataframe.to_csv(
-                f"{csv_base_filepath}/{folder_name}/{folder_name}_{current_year}.csv")
+                f"{csv_base_filepath}/{folder_name}/{folder_name}_{current_year}.csv",
+                index=False
+            )
             print(f"💪💪 Success! 💪💪")

@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 
-from src.utils.files import generate_full_csv_filename, get_folders_constants
-from src.utils.folders import get_folders_constants
+from src.utils.files import generate_full_csv_filename
+from src.utils.constants import get_folders_constants
 
 
 def create_totals_raw_datasets() -> None:
@@ -36,6 +36,6 @@ def create_totals_raw_datasets() -> None:
 
         print(f"Saving full dataset in {raw_full_dataset_filepath}")
 
-        raw_full_dataset.to_csv(raw_full_dataset_filepath)
+        raw_full_dataset.to_csv(raw_full_dataset_filepath, index=False)
 
         print("Success!")
