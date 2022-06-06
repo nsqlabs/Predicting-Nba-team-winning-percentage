@@ -7,7 +7,3 @@ def run_etl():
         apply_transformation_to_datasets()
     except Exception as error:
         print("Occured an error: ", error)
-
-
-if __name__ == 'main':
-    run_etl()
