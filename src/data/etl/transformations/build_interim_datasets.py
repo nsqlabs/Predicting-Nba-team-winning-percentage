@@ -1,11 +1,10 @@
 import os
-import numpy as np
 import pandas as pd
 
 from src.data.etl._utils import get_raw_dataset_name_from_filename, create_interim_filename_from_dataset_name, generate_full_csv_filename
-from src.utils.constants import get_folders_constants, get_scraping_constants
-
-
+from src.utils.constants import get_folders_constants
+from .base_transformations import apply_common_transformations_to_dataset, add_wins_losses_by_season
+from ._per_dataset.advanced_stats_basic_transformations import transform_advanced_stats_df
 
 
 def build_interim_datasets():
@@ -30,7 +29,7 @@ def build_interim_datasets():
 
         print("Applying base transformations to dataset",
               full_path_filename.split(os.sep)[-1])
-        transformed_df = _apply_common_transformations_to_dataset(
+        transformed_df = apply_common_transformations_to_dataset(
             pd.read_csv(full_path_filename)
         )
         print("SUCCESS")
@@ -49,9 +48,13 @@ def build_interim_datasets():
         if 'advanced' in dataset_name:
             continue
         else:
-            all_dataframes[dataset_name] = _add_wins_losses_by_season(
+            all_dataframes[dataset_name] = add_wins_losses_by_season(
                 all_dataframes[dataset_name], all_dataframes[advanced_df_key])
         print(f"---- ENDS PROCESSING {FILENAME} ----")
+    print("SUCCESS")
+    print("APPLYING PREPROCESSING TO ADVANCED STATS DATASET")
+    all_dataframes[advanced_df_key] = transform_advanced_stats_df(
+        all_dataframes[advanced_df_key])
 
     print("SUCCESS")
     for dataset_name, dataframe in all_dataframes.items():

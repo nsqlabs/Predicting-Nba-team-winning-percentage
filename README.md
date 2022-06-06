@@ -69,3 +69,6 @@ Project Organization
 - [ ] .
 - [ ] .
 - [ ] .
+
+
+> How much would this problem change by changing it from a regression problem to one of classify or does not classify to playoffs? That's all what matters at the end but I would need to see how much impact having shorter seasons have. Also I should consider the salaries or something like that? **Is this what everyone mean when they advice you to define a clear goal before starting any project?**
