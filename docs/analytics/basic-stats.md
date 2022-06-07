@@ -1,47 +1,40 @@
-# Features summary
+## Where are this type of analytics being used?
 
-- `Age`: Average players age  
-- `W`: Number of wins in season  
-- `L`: Number of losses in season  
-- `PW`: Pythagorean wins; expected wins based on points scored and allowed
-- `PL`: Pythagorean losses; expected losses based on points scored and allowed
-- `MOV`: Margin of victory
-- `SOS`: Strength of Schedule; a rating of strength of schedule. The rating is denominated in points above/below average, where zero is average. A positive number indicates a harder than average schedule
-- `SRS`: Simple Rating System; a rating that takes into account average point differential and strength of schedule. The rating is denominated in points above/below average, where zero is average.
-- `ORtg`: Offensive Rating (available since the 1977-78 season in the NBA); for players it is points produced per 100 posessions, while for teams it is points scored per 100 possessions
-- `DRtg`: Defensive Rating (available since the 1973-74 season in the NBA); for players and teams it is points allowed per 100 posessions.
-- `NRtg`: Estimate of point differential per 100 possesions
-- `Pace`: Estimate of possesions per 48 minutes
-- `Ftr`: Free throw attempt rate; Number of FT per Goal Attempt
-- `3PAr`: Percentage of field goals attempt from 3 point range
-- `TS%`: True shooting percentage; A measure of shooting efficiency that takes into account 2-point field goals, 3-point field goals, and free throws
-- `eFG%_offense`: The statistic adjusts to the fact that a 3 point field goald is worth one more point that a 2 point field goal
-- `TOV%_offense`: Turnover percentage; An estimate of turnover commited per 100 plays.
-- `ORB%`: Offensive Rebound Percentage; An estimate of the percentage of available offensive rebounds a player grabbed while they were on the floor.
-- `FT/FGA_offense`: Offensive Free throw attempt rate; Number of FT per Goal Attempt in offense
-- `eFG%_defense`: The statistic adjusts to the fact that a 3 point field goald is worth one more point that a 2 point field goal
-- `TOV%_defense`: Turnover percentage; An estimate of turnover commited per 100 plays.
-- `ORB%`: Defensive Rebound Percentage; An estimate of the percentage of available defensive rebounds a player grabbed while they were on the floor.
-- `FT/FGA_defense`: Defensive Free throw attempt rate; Number of FT per Goal Attempt in offense
+These features are used in datasets:
 
-# Explanation of features
-## `PW`:
-## `PL`:
-## `MOV`:
-## `SOS`:
-## `SRS`:
-## `ORtg`:
-## `DRtg`:
-## `NRtg`:
-## `Pace`:
-## `Ftr`:
-## `3PAr`:
-## `TS%`:
-## `eFG%_offense`: 
-## `TOV%_offense`: 
-## `ORB%`:
-## `FT/FGA_offense`: 
-## `eFG%_defense`: 
-## `TOV%_defense`: 
-## `ORB%`:
-## `FT/FGA_defense`:
+- [Per game stats dataset](../datasets/per-game.md)
+- [Per 100 possessions stats dataset](../datasets/per-100-possesions.md)
+- [Season total stats dataset](../datasets/season-totals.md)
+
+## Assumptions
+
+> In this project I assume you have a basic notion of how basketball is played and what each feature means. This is only for clarification regarding abbreviations. For advanced stats I'll provide additional context.
+
+All this explanations are based on the preprocessed data. There are certain features that were added during preprocessing or raw data treatment.
+
+
+## Features summary
+
+- `2P%`:  2-Point Field Goal Percentage
+- `2P`:  2-Point Field Goals
+- `2PA`:  2-point Field Goal Attempts
+- `3P%`:  3-Point Field Goal Percentage
+- `3P`:  3-Point Field Goals
+- `3PA`:  3-Point Field Goal Attempts
+- `AST`:  Assists
+- `BLK`:  Blocks
+- `DRB`:  Defensive Rebounds
+- `FG%`:  Field Goal Percentage
+- `FG`:  Field Goals
+- `FGA`:  Field Goal Attempts
+- `FT%`:  Free Throw Percentage
+- `FT`:  Free Throws
+- `FTA`:  Free Throw Attempts
+- `G`:  Games
+- `MP`:  Minutes Played
+- `ORB`:  Offensive Rebounds
+- `PF`:  Personal Fouls
+- `PTS`:  Points
+- `STL`:  Steals
+- `TOV`:  Turnovers
+- `TRB`:  Total Rebounds

@@ -1,4 +1,6 @@
 Predicting NBA Wins
+
+![](docs/assets/nba-analytics-header.png)
 ==============================
 
 A short description of the project.

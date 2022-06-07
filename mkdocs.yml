@@ -2,20 +2,28 @@ site_name: Predicting NBA Wins
 docs_dir: 'docs'
 nav:
   - Home: "index.md"
+  - Assumptions: "assumptions.md"
+  - Usage: "usage.md"
   - The datasets used:
     - "Advanced stats dataset": datasets/advanced.md
     - "Per game stats dataset": datasets/per-game.md
     - "Per 100 possesions stats dataset": datasets/per-100-possesions.md
     - "Season total stats dataset": datasets/season-totals.md
-  - Assumptions: "assumptions.md"
+    - Data states:
+      - "External data": datasets/data-states/external.md
+      - "Raw data": datasets/data-states/raw.md
+      - "Interim data": datasets/data-states/interim.md
+      - "Processed data": datasets/data-states/processed.md
   - Analytics explained:
     - "Basic stats": analytics/basic-stats.md
     - "Advanced stats": analytics/advanced-stats.md
-  - Data pipeline:
-    - "External data": data-states/external.md
-    - "Raw data": data-states/raw.md
-    - "Interim data": data-states/interim.md
-    - "Processed data": data-states/processed.md
+  - Process:
+    - "Fetching data": process/1-fetching-data.md
+    - "Preprocessing data": process/2-preprocessing-data.md
+    - "Exploratory Data Analysis": process/3-exploratory-data-analysis.md
+    - "Feature selection & Feature engineering": process/4-feature-selection-and-feature-engineering
+    - "Model training": process/5-model-training.md
+    - "Model evaluation and improvement": process/6-model-evaluation-and-improvement
   - Reports:
     - "Predicting wins using advanced stats": reports/advanced.md
     - "Predicting wins using per 100 possesions stats": reports/per-100-possesions.md
@@ -24,7 +32,8 @@ nav:
   - Conclusion: "conclusion.md"
 theme:
   name: material
-  logo: https://1000marcas.net/wp-content/uploads/2019/12/NBA-Logo.png
+  logo: https://iconarchive.com/download/i103841/blackvariant/button-ui-requests-13/NBA.ico
+  favicon: https://iconarchive.com/download/i103841/blackvariant/button-ui-requests-13/NBA.ico
   features:
     - navigation.tabs
     - navigation.tabs.sticky

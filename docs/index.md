@@ -1,39 +1,45 @@
-# Welcome to MkDocs
+# Predicting season's wins in NBA
+## Motivation of the project.
+![](assets/nba-analytics-header.png)
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+In this project, we'll be looking at a variety of factors that may influence a team's win total in an NBA season. We'll be using data from previous seasons (32 years of NBA for being exact) to see if we can build a model that accurately predicts a team's season win total. Some of the questions we'll be looking to answer are:
 
-## Commands
+- What are the most important factors in determining how many games an NBA team will win in a season?
+- Can we predict how many games a team will win in a season based on statistics from previous seasons?
+- What datasets would be most useful in constructing a model to predict a team's season win total?
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+By the end of this project, we should have a good understanding of which factors are most important in determining a team's season win tota by developing multiple models that predicts a team’s win totals based on various data sets. 
 
-## Project layout
+This is a learning project that involves many important aspects of a real life data science project:
 
-    mkdocs.yml    # The configuration file.
-    pages/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- Gathering data from external sources.
+- Preparing that data and storing it through multiple stages.
+- Making an exploratory data analysis and gathering relevant insights useful for models development.
+- Evaluating and comparing (with the same metrics) multiple models (and algorithms) trained with different features to figure out which dataset can providfe us multiple insights.
+- Improving these models.
+- Documenting the whole process and thinking in project reusability and adding an action for making automatic builds. 
+- Operationalizing the project through an API and a webpage.
 
-## Project explanation
+## The problem to solve
+### Formal Definition
 
-I'm baby yOLO commodo ad slow-carb. Do labore lorem paleo migas synth pariatur green juice, iPhone before they sold out XOXO jean shorts franzen consequat. Af tacos meditation pork belly ut vice. Plaid DSA pabst authentic crucifix williamsburg try-hard. Kogi occupy DIY, master cleanse slow-carb chambray shabby chic cardigan venmo subway tile ugh organic. Kale chips man braid post-ironic cloud bread affogato biodiesel consequat taiyaki bicycle rights mustache.
+> **Tom Mitchell’s machine learning formalism looks like this**: A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.``
 
-Messenger bag schlitz tonx activated charcoal. Kitsch pitchfork consequat lyft fugiat plaid pop-up mustache. Mlkshk pickled listicle, nulla chillwave jean shorts pabst williamsburg migas heirloom hell of bespoke jianbing. Pinterest mollit sartorial truffaut banh mi nisi enim waistcoat ramps ethical you probably haven't heard of them magna irure iPhone. Freegan marfa prism pinterest intelligentsia yr 8-bit thundercats nisi tousled fashion axe art party gentrify.
+- **Task** (_T_): Predict the number of wins a team will have based on statistics.
+- **Experience** (_E_): Multiple datasets of basic and advanced stats summarizd for a team's whole season.
+- **Performance** (_P_): R^2 score to evaluate how much of the data variation is explained by these set of features.
 
-Yr letterpress keytar, shaman ut dolor raw denim eiusmod aute. Cray pitchfork bitters, af fanny pack swag aliqua bespoke live-edge. Duis af crucifix yr est sartorial literally freegan locavore williamsburg direct trade sriracha mlkshk aute. Chartreuse four loko direct trade disrupt, kombucha pok pok venmo lyft. Aliquip chia cloud bread, wolf occupy etsy lyft elit chambray green juice exercitation disrupt wayfarers nostrud.
 
-Voluptate tousled health goth, marfa street art cliche narwhal cronut laborum offal irure fugiat nisi. 3 wolf moon locavore tofu cloud bread minim. Esse raw denim vape hexagon. Ramps pop-up aesthetic fanny pack. Venmo williamsburg culpa sunt PBR&B, subway tile biodiesel adipisicing tbh.
+### Informal Definition
 
-Street art cray health goth fashion axe keytar twee. 90's copper mug nostrud iceland cillum retro enim dolore. Officia mollit edison bulb live-edge raw denim man braid. XOXO street art ennui, distillery velit consectetur et pug. Dolore meditation direct trade praxis, semiotics snackwave artisan marfa selfies palo santo do pour-over irure. Coloring book labore YOLO aesthetic chambray taxidermy eiusmod. Brunch minim offal, cronut typewriter veniam migas in ut pinterest tofu venmo whatever blog retro.
+> Describe the problem as though you were describing it to a friend or colleague. This can provide a great starting point for highlighting areas that you might need to fill. It also provides the basis for a one sentence description you can use to share your understanding of the problem.
 
-In iPhone vice, fugiat polaroid dolore tbh shoreditch sustainable ex etsy bicycle rights. Letterpress microdosing occaecat, tousled consequat pug af kickstarter ex occupy deserunt chicharrones. Minim ut meh, gluten-free waistcoat ramps artisan enamel pin. Mustache mlkshk kitsch shaman marfa quinoa excepteur tote bag sustainable etsy vice. Vexillologist slow-carb polaroid velit, sint roof party yuccie franzen. Occupy umami mlkshk health goth. Irony tilde leggings id neutra taxidermy.
+I want to find the best set of predictors by team season
 
-Meh tbh gentrify nisi. Cillum pickled ullamco af tbh. Master cleanse nostrud excepteur XOXO migas selfies hammock. Distillery praxis locavore paleo non brunch. Cronut wayfarers literally la croix listicle proident yuccie echo park try-hard readymade nisi nostrud man braid food truck sunt. Tattooed crucifix occupy unicorn live-edge reprehenderit normcore four loko authentic plaid aesthetic air plant.
+### Similar problems
 
-Hammock everyday carry mlkshk keytar asymmetrical crucifix. Semiotics bicycle rights VHS, +1 enamel pin scenester eu lorem literally franzen man braid actually crucifix. Adipisicing shabby chic chillwave, polaroid drinking vinegar raw denim umami narwhal. Ea chartreuse cred austin pitchfork irure butcher in, subway tile ut lumbersexual letterpress waistcoat you probably haven't heard of them dolore. Twee velit synth bespoke four loko small batch subway tile lorem. Lo-fi artisan excepteur messenger bag echo park. Velit in nostrud unicorn, dolore sint offal hoodie migas etsy excepteur readymade tumblr.
+This regression problem can be applied to many other situations where the goal is to predict a numerical value. For example, an analyst might want to know how the movement of the stock market affects the price of ExxonMobil (XOM) stock. In this case, the linear equation would have the value of the S&P 500 index as the independent variable (or predictor) and the price of XOM as the dependent variable.
 
-Squid tonx ullamco artisan. Ugh id selvage aliquip lorem, selfies sartorial keytar blue bottle eiusmod crucifix. Four dollar toast kinfolk reprehenderit, dolore fashion axe snackwave tumblr. Reprehenderit next level knausgaard four loko, dolore sunt shabby chic nisi.
+> There are a number of factors that affect the outcome of an event - not just one. For example, the price movement of ExxonMobil depends on more than just the performance of the overall market. Other predictors, such as the price of oil, interest rates, and the price movement of oil futures can affect the price of XOM and stock prices of other oil companies. To understand a complex relationship like this, multiple linear regression is used.
 
-Typewriter sint kickstarter irure distillery air plant umami bespoke ugh. Yr truffaut intelligentsia 90's aute. Asymmetrical prism elit pariatur iceland, fixie 90's street art photo booth tacos keffiyeh neutra et dolor. Fanny pack beard hammock, consectetur umami cray pop-up semiotics. Hella prism flexitarian in laborum. Cold-pressed qui thundercats asymmetrical ut squid semiotics small batch pabst humblebrag la croix.
+Multiple linear regression (MLR) is a statistical technique that can be used to figure out the relationships between multiple random variables. In other words, MLR examines how multiple independent variables are related to one dependent variable.  Once each of the independent factors has been determined to predict the dependent variable, the information on the multiple variables can be used to create an accurate prediction on the level of effect they have on the outcome variable. The model creates a relationship in the form of a straight line (linear) that best approximates all the individual data points.
